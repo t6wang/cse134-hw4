@@ -11,7 +11,7 @@ Project Req/Status:
     - [ ] CSS Animations, Transitions, Transforms
     - [ ] Media Query 
     
-- [ ] Part 2: Image Usage
+- [X] Part 2: Image Usage
 
 - [ ] Part 3: Responsive Web Design
     - [ ] Very small screen (phone)
