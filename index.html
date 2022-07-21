@@ -1,150 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8" />
-	<meta name="description" content="Tina Wang's Portfolio Page" />
-	<meta name="keywords" content="HTML, CSS, JavaScript" />
-	<meta name="author" content="Tina Wang" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<link href="images/favicon.ico" rel="icon" />
-	<link href="styles/main.css" rel="stylesheet" />
-    <title>Tina Wang: Software & Web Developer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script>
+        class ProjectContent extends HTMLElement {}
+        customElements.define('project-content', ProjectContent, {extends:'div'})
+
+        class ProjectTitle extends HTMLElement {}
+        customElements.define('project-title', ProjectTitle, {extends:'div'})
+
+        class ProjectTools extends HTMLElement {}
+        customElements.define('project-tools', ProjectTools, {extends:'div'})
+
+        class ProjectVisual extends HTMLElement {}
+        customElements.define('project-visual', ProjectVisual, {extends:'div'})
+
+
+    </script>
 </head>
-
 <body>
-	<header class="home container" id="home">
+    <header>
         <div class="wrapper">
-            <nav>
-                <ul>
-                    <li><a href="#home">home</a></li>
-                    <li><a href="#aboutme">about</a></li>
-                    <li><a href="#toolbox">toolbox &amp; skills</a></li>
-                    <li><a href="#projects">projects</a></li>
-                    <li><a href="#hmu">contact</a></li>
-                </ul>
-            </nav>
-      
-            <h1><span>Hello, My name is Tina!</span> I'm a <span class="title">Software Developer</span> and...
-              
-                    <h3><code>id_1 = pistoriophile</code></h3>
-                    <h3><code>id_2 = lacrosse player</code></h3>
-                    <h3><code>id_3 = world traveller</code></h3>
-                    <h3><code>id_4 = weightlifter</code></h3>
-                    <h3><code>id_n = more</code></h3>
-           
-            </h1>      
-          </div>
-	</header>
-
-	<main>
+            <div class="menu-lists">
+                <nav>
+                    <ul class="nbar" id="nbar">
+                        <li><a href="#home">home</a></li>
+                        <li><a href="#aboutme">about</a></li>
+                        <li><a href="#toolbox">toolbox &amp; skills</a></li>
+                        <li><a href="#projects">projects</a></li>
+                        <li><a href="#contact">contact</a></li>
+                        <a class="close-menu" href="#"><img src="assets/img/closemenu.svg" alt="menu close"></a>
+                    </ul>
+                    <a class="hamburger-menu" href="#nbar"><img src="assets/img/menu.svg" alt="menu"></a>
+                </nav>
+            </div>
+            <h1>
+                Hello, my name is
+                <span class="title"> Tina Wang.</span>
+                I'm an aspiring
+                <a class="title"><code>software engineer</code> </a> and...
+                <!-- todo script for transitions-->
+                <span class="title-transitions">
+                    <li>
+                        <span class="title-transition"> <code>lacrosse player.</code></span>
+                      
+                        <span class="title-transition"><code>pistoriophile.</code></span>
+                    
+                        <span class="title-transition"> <code>weightlifter.</code></span>
+                    
+                        <span class="title-transition"><code>home cook.</code></span>
+                        <span class="title-transition"><code>coffee lover.</code></span>
+                    </li>
+                </span>
+            </h1>
+        </div>   
+       
+    </header>
+    <main>
+        <!-- TODO: About Me Section -->
         <section class="aboutme" id="aboutme">
             <div class="wrapper">
                 <h2>About Me</h2>
                 <h3>Who is Tina?</h3>
             </div>       
         </section>
-        <br />
         <section class="toolbox" id="toolbox">
             <div class="wrapper">
-                <h2>My Toolbox</h2>
-                <h3>Some of my skills and tools I use...</h3>
-                <table>
-                    <tr>
-                      <td>HTML5</td>
-                      <td>JS</td>
-                      <td>CSS</td>
-                    </tr>
-                    <tr>
-                        <td>Git</td>
-                        <td>Github</td>
-                        <td>Command Line</td>
-                    </tr>
-                    <tr>
-                        <td>VS Code</td>
-                        <td>Firebase</td>
-                    </tr>
-                </table>
+                <h2>Toolbox</h2>
+                <h3> tools & skills </h3>
+                <p> Here are some of the tools I use and things I can do</p>
+                <div class="tool-icons">
+                    
+                </div>
             </div>
-        </section>
-        <br />
+        </section>  
         <section class="projects" id="projects">
             <div class="wrapper">
-                <h2>Current Work</h2>
-                <h3>Right now, I'm working on...</h3>
-                <h2>My Projects</h2>
-                <section class="video">
-                    <h3>Sample Project Video</h3>
-                    <video controls height="400" width="699">
-                        <!-- video source from cse 134b hw1 -->
-                        <source src="videos/videoplayback.mp4" type="video/mp4" />
-                        <embed type="video/mp4" src="videos/videoplayback.mp4" width="400" height="300">
-                        <div class="error">Video not supported by current browser</div>
-                    </video>
-                </section>
-            </div>
-        </section>
-        <br />
-        <section class="hmu" id="hmu">
-            <div class="wrapper">
-                <h2>Get in Touch with me!</h2>
-                <h3>Send me a message here</h3>
-                <div class="content">
-                    <div class="form">
-                      <p>Ask any questions, for my resume, or just say hi! I'd love to work together!</p>
-                      <p>Fill out the form below and I'd love to hear from you!</p>
-                      <!-- will add form api later -->
-                      <form action="https://formspree.io/tinawang158@gmail.com" method="POST">
-                        <div class="inputf">
-                            <label for="email">Email Address<span class="required">*</span></label>
-                            <input type="email" name="_replyto" id="email" placeholder="Enter email here">
-                          
-                        </div>
-                        <div class="inputf">
-                            <label for="name">Name<span class="required">*</span></label>
-                            <input type="text" name="name" id="name" placeholder="Enter name here">
-                          </div>
-                       
-                        <div class="inputf">
-                            <label for="message" class="message">Your Message<span class="required">*</span></label>
-                            <textarea type="textbox" name="message" id="message" placeholder="Hi hello!"></textarea>
-                        </div>
-                       
-                        <br />
-                        <button class="button" value="send">
-                          <span><i>Send Message!</i></span>
-                        </button>
-                      </form>
+                <h2>Projects</h2>
+                <h3>Things I've Built</h3>
+                <!-- PROJECT 1-->
+                <div class="grid-lists">
+                    <project-content>
+                        <project-title>
+                            <h4>He11's Kitchen</h4>
+                            <p class="content-details">Cooking consists of preparing food through various different techniques
+                                and combining different foods and spices with a variety of kitchen tools
+                                depending on the dish, environment, and constraints. Software engineering
+                                is pretty similiar - He11's Kitchen's aim is to cook up tasty dishes. A
+                                group programming project with <a href="https://github.com/cse110-fa21-group11/cse110-sp21-group11/blob/main/admin/team.md">Team 11.</a> 
+                            </p>
+                        </project-title>
+                        <project-visual>
+                            <img src="assets/img/hellskitchen.jpg" alt="He11's Kitchen App">
+                        </project-visual>
+                        <project-tools>
+                            
+                        </project-tools>
+                    
+                    </project-content>
+                    <!-- PROJECT 2-->
+                    <project-content>
+                        <project-title>
+                            <h4>BamBOOK</h4>
+                            <p class="content-details">Our web application bamBOOK is a low-stress, daily learning environment for both children and adults
+                                with visual dyslexia. It allows users to practice reading and typing the sentence they hear and see
+                                on the screen, and through this process enhance their English reading and typing skills. A 
+                                <a href="">HackDuke Code for Good 2020</a> project with my friends!
+                            </p>
+                        </project-title>
+                        <project-visual>
+                            <img src="assets/img/bambook.jpg" alt="BamBOOK App">
+                        </project-visual>
+                        <project-tools>
+                            
+                        </project-tools>
+                    </project-content>
+                    <!-- PROJECT 3-->
+                    <project-content>
+                        <project-title>
+                            <h4>COMING SOON</h4>
+                            <p>:)
+                            </p>
+                        </project-title>
+                        <project-visual>
+                        </project-visual>
+                        <project-tools>
+                            
+                        </project-tools>
+                    </project-content>
+                    <!-- PROJECT 4-->
+                    <project-content>
+                        <project-title>
+                            <h4>COMING SOON</h4>
+                            <p>:)
+                            </p>
+                        </project-title>
+                        <project-visual>
+                        </project-visual>
+                        <project-tools>
+                            
+                        </project-tools>
+                    </project-content>
+                    <!-- PROJECT 5-->
+                    <project-content>
+                        <project-title>
+                            <h4>COMING SOON</h4>
+                            <p>:)
+                            </p>
+                        </project-title>
+                        <project-visual>
+                        </project-visual>
+                        <project-tools>
+                            
+                        </project-tools>
+                    </project-content>
+                    <!-- PROJECT 6-->
+                    <project-content>
+                        <project-title>
+                            <h4>COMING SOON</h4>
+                            <p>;)
+                            </p>
+                        </project-title>
+                        <project-visual>
+                        </project-visual>
+                        <project-tools>
+                            
+                        </project-tools>
+                    </project-content>
+                </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="wrapper">
+            <h2>Contact</h2>
+            <h3>Send a message</h3>
+            <div class="content">
+                <div class="form">
+                  <p>Ask any questions, for my resume, or just say hi! I'd love to work together!</p>
+                  <!-- will add form api later -->
+                  <form action="https://formspree.io/tinawang158@gmail.com" method="POST">
+                    <div class="inputf">
+                        <label for="email">Email Address<span class="required">*</span></label>
+                        <input type="email" name="_replyto" id="email" placeholder="Enter email here">
+                      
                     </div>
-          
-            </div>          
-        </section>   
-       
-		<section class="social">
-            <h3>I'm everywhere! You can find me at...</h3>
-            <ul>
-                <li>
-                    <img src="images/bear.png" alt="Github" height="430" width="700" />
-                    <a href="https://github.com" target="_blank"><span class="visually-hidden">GitHub</span></a>
-                </li>
-                <li>
-                    <img src="images/triton.jpg" alt="Instagram" height="430" width="700" />
-                    <a href="http://instagram.com" target="_blank"><span class="visually-hidden">Instagram</span></a>
-                </li>
-            </ul>
-			
-			<br />		
-	</main>
-
-	<footer>
-		<hr/>
-		<p><code>Coded with html & love by   </code> Tina Wang</p>
+                    <div class="inputf">
+                        <label for="name">Name<span class="required">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Enter name here">
+                      </div>
+                   
+                    <div class="inputf">
+                        <label for="message" class="message">Your Message<span class="required">*</span></label>
+                        <input type="text" name="message" id="message" placeholder="Hi hello!"></input>
+                    </div>
+                   
+                    <br />
+                    <button class="button" value="send">
+                      <span><i>Send Message!</i></span>
+                    </button>
+                  </form>
+                </div>
+      
+        </div>          
+    </section>   
+    </main>
+    <footer>
+        <div class="wrapper">
+            <p><code>coded with html & &#128155 by <a>Tina Wang</a>  </code> </p>
+        </div>
+		
 	</footer>
-	<script type="module">
-		import { update } from './scripts/main.js';
-		window.update = update;
-	</script>
 </body>
-
 </html>
