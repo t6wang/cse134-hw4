@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects</title>
+    <title>Tina Wang's Portfolio</title>
     <link rel="stylesheet" href="styles/style.css">
     <script>
         class ProjectContent extends HTMLElement {}
@@ -19,8 +19,8 @@
         class ProjectVisual extends HTMLElement {}
         customElements.define('project-visual', ProjectVisual, {extends:'div'})
 
-
     </script>
+    <script type="text/javascript" src="scripts/main.js"></script>
 </head>
 <body>
     <header>
@@ -42,20 +42,14 @@
                 Hello, my name is
                 <span class="title"> Tina Wang.</span>
                 I'm an aspiring
-                <a class="title"><code>software engineer</code> </a> and...
-                <!-- todo script for transitions-->
-                <span class="title-transitions">
-                    <li>
-                        <span class="title-transition"> <code>lacrosse player.</code></span>
-                      
-                        <span class="title-transition"><code>pistoriophile.</code></span>
-                    
-                        <span class="title-transition"> <code>weightlifter.</code></span>
-                    
-                        <span class="title-transition"><code>home cook.</code></span>
-                        <span class="title-transition"><code>coffee lover.</code></span>
-                    </li>
-                </span>
+                <span class="title">software engineer</span>  and...
+                <p class="text-rotations">
+                    <span class="text-rotate"> <code>lacrosse player</code></span>
+                    <span class="text-rotate"><code>pistoriophile</code></span>
+                    <span class="text-rotate"> <code>weightlifter</code></span>
+                    <span class="text-rotate"><code>home cook</code></span>
+                    <span class="text-rotate"><code>tea & coffee lover</code></span>
+                </p>
             </h1>
         </div>   
        
@@ -78,6 +72,7 @@
                 </div>
             </div>
         </section>  
+        <!-- TODO for project section, add github/website links; incorporate icons -->
         <section class="projects" id="projects">
             <div class="wrapper">
                 <h2>Projects</h2>
@@ -179,33 +174,34 @@
             <h2>Contact</h2>
             <h3>Send a message</h3>
             <div class="content">
-                <div class="form">
-                  <p>Ask any questions, for my resume, or just say hi! I'd love to work together!</p>
+            
                   <!-- will add form api later -->
-                  <form action="https://formspree.io/tinawang158@gmail.com" method="POST">
-                    <div class="inputf">
-                        <label for="email">Email Address<span class="required">*</span></label>
-                        <input type="email" name="_replyto" id="email" placeholder="Enter email here">
-                      
-                    </div>
-                    <div class="inputf">
-                        <label for="name">Name<span class="required">*</span></label>
-                        <input type="text" name="name" id="name" placeholder="Enter name here">
-                      </div>
-                   
-                    <div class="inputf">
-                        <label for="message" class="message">Your Message<span class="required">*</span></label>
-                        <input type="text" name="message" id="message" placeholder="Hi hello!"></input>
-                    </div>
-                   
-                    <br />
-                    <button class="button" value="send">
-                      <span><i>Send Message!</i></span>
-                    </button>
-                  </form>
-                </div>
-      
-        </div>          
+                  <!-- TODO -->
+                  <!-- CSS formatting make more pleasant -->
+                <form id="form" name="contact-form" action=""" method="POST">
+                    <fieldset>
+                        <legend>Ask any questions, for my resume, or just say hi! I'd love to work together:)</legend>
+                        <div class="form-pair">
+                            <label for="subject">Subject<span class="required">*</span></label>
+                            <input type="text" name="subject" id="subject" placeholder="Enter subject here">
+                        </div>
+                        <div class="form-pair">
+                            <label for="name">Name<span class="required">*</span></label>
+                            <input type="text" name="name" id="name" placeholder="Enter name here">
+                        </div>
+                        <div class="form-pair">
+                            <label for="email">Email Address<span class="required">*</span></label>
+                            <input type="email" name="_replyto" id="email" placeholder="Enter email here">  
+                        </div>
+                        <div class="form-pair">
+                            <label for="message" class="message">Your Message<span class="required">*</span></label>
+                            <input type="text" name="message" id="message" placeholder="Hi hello!"></input>
+                        </div>
+                        <button type="submit">Send Message!</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>         
     </section>   
     </main>
     <footer>
