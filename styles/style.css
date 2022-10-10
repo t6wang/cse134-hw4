@@ -9,6 +9,8 @@
     --accent-color-1: #64ffda;
     --accent-color-2: #8892B0;
     --project-color: #e6f1ff;
+    --invalid-color: red;
+    --animation-delay: 1.75s;
 
    
 }
@@ -130,17 +132,75 @@ h1 {
     display: block;
     padding-top: 10px;
     padding-bottom: 150px;
-    margin: 0;
+    margin: 1rem !important;
     color: var(--secondary-color-light);
     font-family: Calibri, sans-serif;
+    position: relative;
 }
 h1 span:first-child {
     display: inline-block;
     width: 100%;
 }
-h1 li{
-    display: grid;
+.text-rotate {
+    position: absolute;
+    margin-left: 1.5rem !important;
+    opacity: 0;
 }
+
+@keyframes rotate {
+    0% {
+        opacity: 0;
+    }
+    25%, 75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.text-rotate:nth-of-type(1) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
+    /* animation-delay: calc(.5+(var(--n)*var(--animation-delay))); */
+    /* TODO */
+    /* above line does not work; try using jscript for loop and get rid of 
+    nth-of-type */
+}
+.text-rotate:nth-of-type(2) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: calc(.5s + var(--animation-delay));
+    /* animation-delay: calc(.5+(var(--n)*var(--animation-delay))); */
+    /* TODO */
+    /* above line does not work; try using jscript for loop */
+}
+.text-rotate:nth-of-type(3) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: calc(.5s + 2*var(--animation-delay));
+    /* animation-delay: calc(.5+(var(--n)*var(--animation-delay))); */
+    /* TODO */
+    /* above line does not work; try using jscript for loop */
+}
+.text-rotate:nth-of-type(4) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: calc(.5s + 3*var(--animation-delay));
+    /* animation-delay: calc(.5+(var(--n)*var(--animation-delay))); */
+    /* TODO */
+    /* above line does not work; try using jscript for loop */
+}
+.text-rotate:nth-of-type(5) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: calc(.5s + 4*var(--animation-delay));
+    /* animation-delay: calc(.5+(var(--n)*var(--animation-delay))); */
+    /* TODO */
+    /* above line does not work; try using jscript for loop */
+}
+
+
 h2 {
     text-transform: uppercase;
     margin: 0 0 10px;
@@ -225,26 +285,54 @@ project-content:hover{
     gap: 1rem;
     /* background-color: var(--secondary-color-dark); */
 }
-form{
+form, fieldset{
     display: block;
 }
-.inputf{ 
-    margin-bottom: 5px;
-}
-.inputf > label{
-    
-    border: 2px solid rgba(72, 216, 164, 0);
-    width: 100%;
-    display: block;
-    padding: 1.2rem 0.6rem 0.4rem;
-    color: var(--accent-color-2);
+legend {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.3; 
+    max-width: 600px;
+    letter-spacing: 0.02rem;
+    margin: 1rem 0 -0.5rem;
+    color: var(--project-color);
     font-family: Calibri, sans-serif;
 }
-.inputf > input{
-    border: 2px solid rgba(72, 216, 164, 0);
-    width: 100%;
+.form-pair{ 
+    margin: lem;
     display: block;
+    color: var(--secondary-color-light);
+}
+.form-pair > label{
+    
+    /* border: 1px solid rgba(72, 216, 164, 0); */
+    width: 40%;
+    display: inline-block;
     padding: 1.2rem 0.6rem 0.4rem;
+    color: var(--project-color);
+    font-family: Calibri, sans-serif;
+}
+.form-pair > input{
+    /* border: 2px solid rgba(72, 216, 164, 0); */
+    width: 60%;
+    display: inline-block;
+    padding: 1.2rem 0.6rem 0.4rem;
+    color: var(--secondary-color-darker);
+
+}
+input:valid{
+    background-color: var(--secondary-color-light);
+    border: none;
+    outline: 1px solid var(--accent-color-1);
+    border-radius: 5px;
+
+}
+
+input:invalid{
+    background-color: var(--secondary-color-light);
+    border: none;
+    outline: 1px solid var(--invalid-color);
+    border-radius: 5px;
 }
 
 .final-idea project-content {
